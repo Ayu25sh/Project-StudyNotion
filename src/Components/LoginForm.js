@@ -28,10 +28,10 @@ const LoginForm = ({setIsLoggedIn}) => {
     }
 
   return (
-    <form onSubmit={submitHandler}>
-        <label>
-            <p>
-                Email Address<sup>*</sup>
+    <form onSubmit={submitHandler} className='flex flex-col w-full gap-y-4 mt-6'>
+        <label className='w-full'>
+            <p className='text-[0.875rem] text-white mb-1 loading-[1.375rem]'>
+                Email Address<sup className='text-pink-200'>*</sup>
             </p>
             <input
                 required
@@ -40,11 +40,12 @@ const LoginForm = ({setIsLoggedIn}) => {
                 onChange={changeHandler}
                 name="email"
                 value = {formData.email}
+                className='bg-slate-700 rounded-[0.5rem] text-white w-full p-[12px]'
             />
         </label>
-        <label>
-            <p>
-                Password<sup>*</sup>
+        <label className='w-full relative' >
+            <p className='text-[0.875rem] text-white mb-1 loading-[1.375rem]'>
+                Password<sup className='text-pink-200'>*</sup>
             </p>
             <input
                 required
@@ -53,10 +54,11 @@ const LoginForm = ({setIsLoggedIn}) => {
                 onChange={changeHandler}
                 name="password"
                 value = {formData.password}
+                className='bg-slate-700 rounded-[0.5rem] text-white w-full p-[12px]'
             />
 
-            <span onClick={() => setShowpassword((prev) => !prev)}>
-                {showPassword ? (<AiOutlineEye/>) : (<AiOutlineEyeInvisible />)}
+            <span onClick={() => setShowpassword((prev) => !prev)} className='absolute right-3 top-[38px]  cursor-pointer'>
+                {showPassword ? (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>) : (<AiOutlineEyeInvisible />)}
             </span>
 
             <Link to="#">
